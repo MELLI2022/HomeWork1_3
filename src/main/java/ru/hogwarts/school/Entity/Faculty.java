@@ -1,22 +1,28 @@
-package ru.hogwarts.school.model;
+package ru.hogwarts.school.Entity;
+
+import jakarta.persistence.*;
 
 import java.util.Objects;
-
+@Entity
+@Table(name = "faculties")
 public class Faculty {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
         private String name;
         private int color;
 
-//    public Faculty() {
-//    }
 
         public Faculty(Long id, String name, int color) {
             this.id = id;
             this.name = name;
             this.color = color;
         }
+    public Faculty() {
+    }
 
-        @Override
+
+    @Override
         public String toString() {
             return "Faculty{" +
                     "id=" + id +

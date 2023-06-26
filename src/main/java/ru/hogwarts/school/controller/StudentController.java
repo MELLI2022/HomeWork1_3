@@ -4,7 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.hogwarts.school.Service.StudentService;
-import ru.hogwarts.school.model.Student;
+import ru.hogwarts.school.Entity.Student;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -41,14 +41,15 @@ public class StudentController {
     }
 
     @DeleteMapping("{id}")//DELETE http://localhost:8080/students/2
-    public Student removeStudent(@PathVariable Long id){
-        return studentService.removeStudent(id);
+    public ResponseEntity removeStudent(@PathVariable Long id){
+        studentService.removeStudent(id);
+        return ResponseEntity.ok().build();
     }
 
     @GetMapping
     public ResponseEntity <Collection<Student>>studentByAge(@RequestParam(required = false) int age){
         if (age > 0){
-            return ResponseEntity.ok(studentService.studentByAge(age));
+            return ResponseEntity.ok(studentService.studentByAge());
         }
         return ResponseEntity.ok(Collections.emptyList());
     }

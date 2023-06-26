@@ -1,19 +1,24 @@
-package ru.hogwarts.school.model;
+package ru.hogwarts.school.Entity;
+
+import jakarta.persistence.*;
 
 import java.util.Objects;
-
+@Entity
+@Table(name = "students")
 public class Student {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private int age;
-
-//      public Student() {
-//     }
 
     public Student(Long id, String name, int age) {
         this.id = id;
         this.name = name;
         this.age = age;
+    }
+    public Student() {
     }
 
     @Override
