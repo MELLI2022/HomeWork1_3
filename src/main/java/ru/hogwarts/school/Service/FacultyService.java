@@ -34,4 +34,5 @@ public class FacultyService {
     public Collection<Faculty> facultyByColor(String color) {
         return facultyRepository.findFacultyByColor(color);
     }
+
 }
