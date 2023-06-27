@@ -6,5 +6,5 @@ import ru.hogwarts.school.Entity.Student;
 import java.util.Collection;
 
 public interface StudentRepository extends JpaRepository<Student, Long> {
-    Collection<Student> findStudentByAge();
+    Collection<Student> findStudentByAge(int age);
 }

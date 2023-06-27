@@ -31,7 +31,7 @@ public class FacultyService {
     public void deleteFaculty(long id){
          facultyRepository.deleteById(id);
     }
-    public Collection<Faculty> facultyByColor() {
-        return facultyRepository.findFacultyByColor();
+    public Collection<Faculty> facultyByColor(String color) {
+        return facultyRepository.findFacultyByColor(color);
     }
 }

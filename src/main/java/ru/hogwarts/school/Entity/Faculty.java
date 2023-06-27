@@ -10,10 +10,10 @@ public class Faculty {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
         private String name;
-        private int color;
+        private String color;
 
 
-        public Faculty(Long id, String name, int color) {
+        public Faculty(Long id, String name, String color) {
             this.id = id;
             this.name = name;
             this.color = color;
@@ -60,11 +60,11 @@ public class Faculty {
             this.name = name;
         }
 
-        public int getColor() {
+        public String getColor() {
             return color;
         }
 
-        public void setColor(int color) {
+        public void setColor(String color) {
             this.color = color;
         }
 }

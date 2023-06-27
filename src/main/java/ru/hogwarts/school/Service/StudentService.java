@@ -35,8 +35,8 @@ private final StudentRepository studentRepository;
       studentRepository.deleteById(id);
 
     }
-    public Collection<Student> studentByAge() {
-       return studentRepository.findStudentByAge();
+    public Collection<Student> studentByAge(int age) {
+       return studentRepository.findStudentByAge(age);
     }
 
 //    public  Collection<Student>  getAll() {

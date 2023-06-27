@@ -49,7 +49,7 @@ public class StudentController {
     @GetMapping
     public ResponseEntity <Collection<Student>>studentByAge(@RequestParam(required = false) int age){
         if (age > 0){
-            return ResponseEntity.ok(studentService.studentByAge());
+            return ResponseEntity.ok(studentService.studentByAge(age));
         }
         return ResponseEntity.ok(Collections.emptyList());
     }
