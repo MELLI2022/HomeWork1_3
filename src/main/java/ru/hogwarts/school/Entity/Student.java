@@ -67,4 +67,7 @@ public class Student {
         this.age = age;
     }
 
+    public Faculty getFaculty() {
+        return null;
+    }
 }
